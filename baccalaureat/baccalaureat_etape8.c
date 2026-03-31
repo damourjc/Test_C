@@ -72,8 +72,10 @@ int main() {
 
     char reponses[5][50];
 
+    int nb_categories = 5;
+
     // Saisie utilisateur
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < nb_categories; i++) {
         printf("%d. %s : ", i + 1, categories[i]);
         fgets(reponses[i], 50, stdin);
         enlever_saut_ligne(reponses[i]);
@@ -82,7 +84,7 @@ int main() {
     // Affichage des réponses
     printf("\n--- Tes reponses ---\n");
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < nb_categories; i++) {
         printf("%s : %s\n", categories[i], reponses[i]);
     }
 
@@ -91,7 +93,7 @@ int main() {
 
     printf("\n--- Verification ---\n");
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < nb_categories; i++) {
         score += verifier_reponse(categories[i], reponses[i], lettre);
     }
 
