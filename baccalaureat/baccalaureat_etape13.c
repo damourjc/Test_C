@@ -10,10 +10,11 @@
  *      - Fonction int verifier_reponse(char *categorie, char *mot, char lettre) + ajoute du point score s'il remplit condition (modifié : si "vide")
  *      - Une boucle menu (1 : Jouer ou 2 : Quitter)
  *      - Une boucle de jeu (rejouer)
+ *      - Ajout 3 niveaux de difficulté
  *      - Une lettre aleatoire
  *      - Tableau catégorie et réponse
  *      - Boucle saisir et répondre
- *      - Ajout d'un timer et d'un affichage du temps écoulé
+ *      - Timer et affichage du temps écoulé
  *      - Boucle affichage des réponses
  *      - Vérifier les réponses avec la lettre aléatoire + si "vide" (version optimisé)
  *      - Afficher un score final
