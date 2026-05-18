@@ -1,0 +1,12 @@
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\bin\Debug\BaccalaureatGUI.exe.config
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\bin\Debug\BaccalaureatGUI.exe
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\bin\Debug\BaccalaureatGUI.pdb
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.csproj.AssemblyReference.cache
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.Form1.resources
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.Properties.Resources.resources
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.csproj.GenerateResource.cache
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.csproj.CoreCompileInputs.cache
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.exe
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.pdb
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.FormJeu.resources
+C:\Users\e2508519\Documents\test C\Test_C\jeux_baccalaureat\BaccalaureatGUI\BaccalaureatGUI\obj\Debug\BaccalaureatGUI.FormResultat.resources

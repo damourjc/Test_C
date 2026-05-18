@@ -1,23 +1,25 @@
 /*
  * ==============================================================================================================================================================================
- *  FICHIER  : baccalaureat_etapeA1.c
+ *  FICHIER  : baccalaureat_etapeA2.c
  *  PROJET   : Jeu du Baccalaureat
- *  ETAPE    : Phase 2 - Étape A.1 : STRUCT (ultra important)
+ *  ETAPE    : Phase 2 - Étape A.2 : créer jouer_tour()
  *
  *  DESCRIPTION :
  *  Ce programme (plus optimisé) genere : 
  *      - voir description "baccalaureat_etape1.c" à "baccalaureat_etape14.c"
- *      - Ajout type struct Joueur
+ *      - Objectif : réduire le main()
+ *      - Type struct Joueur
+ *      - Fonction jouer_tour()
  *  
  *  COMPILATION :
- *  Sous Linux/Mac : gcc baccalaureat_etapeA1.c -o baccalaureat_etapeA1 -Wall -g
+ *  Sous Linux/Mac : gcc baccalaureat_etapeA2.c -o baccalaureat_etapeA2 -Wall -g
  * 
- *  Sous Windows   : gcc baccalaureat_etapeA1.c -o baccalaureat_etapeA1.exe -Wall -g
+ *  Sous Windows   : gcc baccalaureat_etapeA2.c -o baccalaureat_etapeA2.exe -Wall -g
  *
  *  EXECUTION :
- *  Sous Linux/Mac : ./baccalaureat_etapeA1
+ *  Sous Linux/Mac : ./baccalaureat_etapeA2
  * 
- *  Sous Windows   : baccalaureat_etapeA1.exe
+ *  Sous Windows   : baccalaureat_etapeA2.exe
  * ==============================================================================================================================================================================
  */
 
@@ -67,6 +69,57 @@ typedef struct {
     char nom[50];
     int score;
 } Joueur;
+
+int jouer_tour(char *nom, int nb_categories, char *categories[], char lettre) {
+
+    system("cls");   // Windows
+    // system("clear"); // Linux/Mac
+
+    printf("\n=== Tour de %s ===\n", nom);
+
+    char reponses[10][50];
+    int score = 0;
+
+    // AVANT saisie
+    time_t debut = time(NULL);
+
+    // Saisie
+    for (int i = 0; i < nb_categories; i++) {
+        printf("%d. %s : ", i + 1, categories[i]);
+        fgets(reponses[i], 50, stdin);
+        enlever_saut_ligne(reponses[i]);
+    }
+
+    // APRÈS saisie
+    time_t fin = time(NULL);
+    int temps_ecoule = (int)(fin - debut);
+
+    // Vérification
+    if (temps_ecoule > 30) {
+        printf("Temps depasse ! Score annule.\n");
+        score = 0;
+    } else {
+        printf("\n--- Verification ---\n");
+
+        for (int i = 0; i < nb_categories; i++) {
+            score += verifier_reponse(categories[i], reponses[i], lettre);
+        }
+    }
+
+    // Affichage des réponses
+    printf("\n--- Tes reponses ---\n");
+
+    for (int i = 0; i < nb_categories; i++) {
+        printf("%s : %s\n", categories[i], reponses[i]);
+    }
+
+    // Temps
+    printf("\nTemps ecoule : %d secondes\n", temps_ecoule);
+
+    printf("\nScore : %d / %d\n", score, nb_categories * 2);
+
+    return score;
+}
 
 int main() {
 
@@ -130,56 +183,13 @@ int main() {
                 // Variables pour stocker les réponses
                 char *toutes_categories[] = { "Prenom", "Ville", "Pays", "Animal", "Objet", "Fruit", "Metier", "Couleur", "Sport", "Marque" };
 
-                char reponses[10][50]; // max = 10;
-
                 for (int j = 0; j < nb_joueurs; j++) {
-
-                    system("cls");   // Windows
-                    // system("clear"); // Linux/Mac
-
-                    printf("\n=== Tour de %s ===\n", joueurs[j].nom);
-
-                    int score = 0;
-
-                    // AVANT saisie
-                    time_t debut = time(NULL);
-
-                    // Saisie
-                    for (int i = 0; i < nb_categories; i++) {
-                        printf("%d. %s : ", i + 1, toutes_categories[i]);
-                        fgets(reponses[i], 50, stdin);
-                        enlever_saut_ligne(reponses[i]);
-                    }
-
-                    // APRÈS saisie
-                    time_t fin = time(NULL);
-                    int temps_ecoule = (int)(fin - debut);
-
-                    // Vérification
-                    if (temps_ecoule > 30) {
-                        printf("Temps depasse ! Score annule.\n");
-                        score = 0;
-                    } else {
-                        printf("\n--- Verification ---\n");
-
-                        for (int i = 0; i < nb_categories; i++) {
-                            score += verifier_reponse(toutes_categories[i], reponses[i], lettre);
-                        }
-                    }
-
-                    // Affichage des réponses
-                    printf("\n--- Tes reponses ---\n");
-
-                    for (int i = 0; i < nb_categories; i++) {
-                        printf("%s : %s\n", toutes_categories[i], reponses[i]);
-                    }
-
-                    // Affichage temps
-                    printf("\nTemps ecoule : %d secondes\n", temps_ecoule);
-
-                    printf("\nScore : %d / %d\n", score, nb_categories * 2);
-
-                    joueurs[j].score = score;
+                    joueurs[j].score = jouer_tour(
+                        joueurs[j].nom,
+                        nb_categories,
+                        toutes_categories,
+                        lettre
+                    );
                 }
 
                 printf("\n=== RESULTATS ===\n");
